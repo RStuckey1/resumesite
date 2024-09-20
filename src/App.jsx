@@ -1,22 +1,29 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
-import Food from './Food.jsx'
 import Card from './Card.jsx'
 import Card2 from './Card2.jsx'
-import Button from './Button.jsx'
-import Student from './student.jsx'
+import About from './Pages/About.jsx'
+import Contact from './Pages/Contact.jsx'
+import Landing from './Pages/Landing.jsx'
+import Portfolio from './Pages/Portfolio.jsx'
 
 function App() {
 
   return(
      <>
-          <Header/>
-          <Card/>
-          <Button/>
-          <Card2/>
-          <Student name="Spongebob" age={30} Roll={true}/>
-          <Food/>
-          <Footer/>
+        <Router>
+          <Routes>
+            <Route path='/' element={<Landing/>}/> 
+            <Route path='/About' element={<About/>}/>
+            <Route path='/Contact' element={<Contact/>}/>
+            <Route path='/Card2' element={<Card2/>}/>
+            <Route path='/Header' element={<Header/>}/>
+            <Route path='/Footer' element={<Footer/>}/>
+            <Route path='/Card' element={<Card/>}/>
+            <Route path='/Portfolio' element={<Portfolio/>}/>
+          </Routes>
+        </Router>  
     </>
   ); 
 }
